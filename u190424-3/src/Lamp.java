@@ -2,33 +2,29 @@
 public class Lamp {
 //	屬性
 //	顏色
-	String color;
+	String color = "White";
 //	目前狀態
 	//考慮分成兩種狀態：電源power，亮度brightness
 	//電源power: On, Off
-	String power;
+	String power = "Off";
 	//亮度brightness
-	String brightness;
+	String brightness = "Dark";
 //	關、夜間、電腦、休閒、閱讀: Dark, Night, Computer, Leisure, Reading
 //	動作（操作）
 //	按（開關）: press
 	void press() {
 		if(power.equals("Off")) {
 			power = "On";
-		}
+		} 
 		if(brightness.equals("Dark")){
 			brightness = "Night";
-		}
-		if(brightness.equals("Night")){
+		} else if(brightness.equals("Night")){
 			brightness = "Computer";
-		}
-		if(brightness.equals("Computer")){
+		} else if(brightness.equals("Computer")){
 			brightness = "Leisure";
-		}
-		if(brightness.equals("Leisure")){
+		} else if(brightness.equals("Leisure")){
 			brightness = "Reading";
-		}
-		if(brightness.equals("Reading")){
+		} else if(brightness.equals("Reading")){
 			brightness = "Night";
 		}
 	}
@@ -44,3 +40,5 @@ public class Lamp {
 	}
 
 }
+
+
