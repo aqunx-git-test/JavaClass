@@ -2,7 +2,7 @@
 public class Lamp {
 //	屬性
 //	顏色
-	String color = "White";
+	private String color = "White";
 //	目前狀態
 	//考慮分成兩種狀態：電源power，亮度brightness
 	//電源power: On, Off
@@ -40,6 +40,7 @@ public class Lamp {
 	}
 
 	public static void main(String[] args) {
+
 		// TODO Auto-generated method stub
 		Lamp lamp = new Lamp(); 
 		
@@ -59,6 +60,14 @@ public class Lamp {
 		lamp.displayStatus();
 		
 
+	}
+
+	public Lamp(String color) {
+		super();
+		this.color = color;
+	}
+	public Lamp() {
+		this("White");
 	}
 }
 
