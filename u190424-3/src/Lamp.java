@@ -41,7 +41,12 @@ public class Lamp {
 
 	public static void main(String[] args) {
 
-		// TODO Auto-generated method stub
+		/*
+		 * 測試：呼叫instance member
+		 */
+		color = "Black";
+		longPress();
+		
 		Lamp lamp = new Lamp(); 
 		
 		lamp.displayStatus();
