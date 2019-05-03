@@ -1,5 +1,20 @@
+package lamp;
 
+/*
+ * 修改-190503:
+ * 把開關、亮度改為public static final
+ */
 public class Lamp {
+// * 把開關、亮度改為public static final
+	public static final int POWER_OFF = 0;
+	public static final int POWER_ON = 1;
+// * 把開關、亮度改為public static final
+	public static final int BRIGHTNESS_DARK = 0;
+	public static final int BRIGHTNESS_NIGHT = 1;
+	public static final int BRIGHTNESS_COMPUTER = 2;
+	public static final int BRIGHTNESS_LEISURE = 3;
+	public static final int BRIGHTNESS_READING = 4;
+
 //	屬性
 //	顏色
 	private String color = "White";
