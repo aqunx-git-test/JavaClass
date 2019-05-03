@@ -3,6 +3,7 @@ package lamp;
 /*
  * 修改-190503:
  * 把開關、亮度改為public static final
+ * 把power, brightness 由String 改為int
  */
 public class Lamp {
 // * 把開關、亮度改為public static final
@@ -21,9 +22,12 @@ public class Lamp {
 //	目前狀態
 	//考慮分成兩種狀態：電源power，亮度brightness
 	//電源power: On, Off
-	String power = "Off";
+// * 把power, brightness 由String 改為int
+	int power = POWER_OFF;
 	//亮度brightness
-	String brightness = "Dark";
+// * 把power, brightness 由String 改為int
+//	String brightness = "Dark";
+	int brightness = BRIGHTNESS_DARK;
 //	關、夜間、電腦、休閒、閱讀: Dark, Night, Computer, Leisure, Reading
 //	動作（操作）
 //	按（開關）: press
