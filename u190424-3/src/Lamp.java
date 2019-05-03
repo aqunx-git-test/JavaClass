@@ -41,11 +41,6 @@ public class Lamp {
 
 	public static void main(String[] args) {
 
-		/*
-		 * 測試：呼叫instance member
-		 */
-		color = "Black";
-		longPress();
 		
 		Lamp lamp = new Lamp(); 
 		
