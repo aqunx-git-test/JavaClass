@@ -23,7 +23,18 @@ public class Lamp {
 	// 考慮分成兩種狀態：電源power，亮度brightness
 	// 電源power: On, Off
 // * 把power, brightness 由String 改為int
-	int power = POWER_OFF;
+	private int power = POWER_OFF;
+	private String power() {
+		switch (power) {
+		case POWER_ON:
+			return "On";
+		case POWER_OFF:
+			return "Off";
+
+		default:
+			return null;
+		}
+	}
 	// 亮度brightness
 // * 把power, brightness 由String 改為int
 //	String brightness = "Dark";
@@ -79,7 +90,9 @@ public class Lamp {
 
 //	長按（關）: longPress
 	void longPress() {
-		this.brightness = "Dark";
+//		this.brightness = "Dark";
+//		this.power = "Off";
+		this.brightness = BRIGHTNESS_DARK;
 		this.power = "Off";
 	}
 
