@@ -93,7 +93,7 @@ public class Lamp {
 //		this.brightness = "Dark";
 //		this.power = "Off";
 		this.brightness = BRIGHTNESS_DARK;
-		this.power = "Off";
+		this.power = POWER_OFF;
 	}
 
 //顯示狀態
