@@ -16,6 +16,7 @@ public class Lamp {
 	public static final int BRIGHTNESS_LEISURE = 3;
 	public static final int BRIGHTNESS_READING = 4;
 
+	
 //	屬性
 //	顏色
 	private String color = "White";
@@ -23,11 +24,11 @@ public class Lamp {
 	// 考慮分成兩種狀態：電源power，亮度brightness
 	// 電源power: On, Off
 // * 把power, brightness 由String 改為int
-	int power = POWER_OFF;
+	private int power = POWER_OFF;
 	// 亮度brightness
 // * 把power, brightness 由String 改為int
 //	String brightness = "Dark";
-	int brightness = BRIGHTNESS_DARK;
+	private int brightness = BRIGHTNESS_DARK;
 
 //	關、夜間、電腦、休閒、閱讀: Dark, Night, Computer, Leisure, Reading
 //	動作（操作）
@@ -79,13 +80,24 @@ public class Lamp {
 
 //	長按（關）: longPress
 	void longPress() {
-		this.brightness = "Dark";
-		this.power = "Off";
+		this.brightness = BRIGHTNESS_DARK;
+		this.power = POWER_OFF;
 	}
+	String power() {
+		switch (this.power) {
+		case POWER_OFF:
+			return "Off";
+			
+		case POWER_ON:
+			return "On";
 
+		default:
+			return null;
+		}
+	}
 //顯示狀態
 	void displayStatus() {
-		System.out.println("電源狀態：**" + this.power + "**");
+		System.out.println("電源狀態：**" + power() + "**");
 		System.out.println("亮度：**" + this.brightness + "**");
 	}
 
@@ -109,13 +121,20 @@ public class Lamp {
 		lamp.displayStatus();
 
 	}
-
 	public Lamp(String color) {
 		super();
 		this.color = color;
 	}
-
 	public Lamp() {
 		this("White");
 	}
+//
+//	public Lamp(String color) {
+//		super();
+//		this.color = color;
+//	}
+//
+//	public Lamp() {
+//		this("White");
+//	}
 }
