@@ -1,6 +1,10 @@
 package lamp;
 
 /*
+ * 190508: 完成學生功課
+ * 新增brightnessDesc()
+ * power() => powerDesc()
+ * 
  * 修改-190503:
  * 把開關、亮度改為public static final
  * 把power, brightness 由String 改為int
@@ -34,24 +38,10 @@ public class Lamp {
 //	動作（操作）
 //	按（開關）: press
 	void press() {
-//		if (power.equals("Off")) {
-//			power = "On";
-//		}
 		if(power == POWER_OFF) {
 			power = POWER_ON;
 		}
-// * 把開關、亮度改為public static final
-//		if (brightness.equals("Dark")) {
-//			brightness = "Night";
-//		} else if (brightness.equals("Night")) {
-//			brightness = "Computer";
-//		} else if (brightness.equals("Computer")) {
-//			brightness = "Leisure";
-//		} else if (brightness.equals("Leisure")) {
-//			brightness = "Reading";
-//		} else if (brightness.equals("Reading")) {
-//			brightness = "Night";
-//		}
+
 		switch (brightness) {
 		case BRIGHTNESS_DARK:
 			brightness = BRIGHTNESS_NIGHT;
@@ -83,7 +73,37 @@ public class Lamp {
 		this.brightness = BRIGHTNESS_DARK;
 		this.power = POWER_OFF;
 	}
-	String power() {
+	String brightnessDesc() {
+		String result = null;
+		switch (brightness) {
+		case BRIGHTNESS_DARK:
+			result = "Dark";
+			break;
+		case BRIGHTNESS_NIGHT:
+			result = "Night";
+			
+			break;
+		case BRIGHTNESS_COMPUTER:
+			result = "Computer";
+			
+			break;
+		case BRIGHTNESS_LEISURE:
+			result = "Leisure";
+			
+			break;
+		case BRIGHTNESS_READING:
+			result = "Reading";
+			
+			break;
+		default:
+			break;
+		}
+		return result;
+
+	}
+//	 * power() => powerDesc()
+	String powerDesc() {
+
 		switch (this.power) {
 		case POWER_OFF:
 			return "Off";
@@ -97,8 +117,8 @@ public class Lamp {
 	}
 //顯示狀態
 	void displayStatus() {
-		System.out.println("電源狀態：**" + power() + "**");
-		System.out.println("亮度：**" + this.brightness + "**");
+		System.out.println("電源狀態：**" + powerDesc() + "**");
+		System.out.println("亮度：**" + brightnessDesc() + "**");
 	}
 
 	public static void main(String[] args) {
